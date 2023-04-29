@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagination </title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+            <div class="app">
+                <h1>Paginaton</h1>
+                <form id="form">
+                    <input type="text" placeholder="Seach Unplash" name="search" id="search">
+                    <button type="submit">Search</button>
+                </form>
+                <div class="spinner" >
+                    <img class="hide" src="loading-gif.gif" alt="" id="loader">
+                </div>
+                <div class="image-grid" id="grid"> 
+                    <!-- <a
+                    href={image.links.html}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="image"
+                    key={index}>
+                    <img src={image.urls.regular} alt={image.alt_description} />
+                  </a> -->
+                  </div>
+                  
+                  <div class="pagination" id="pagination">
+                    
+                  </div>
+                 <!--  <div class="pagination">
+                    <a id="prev">&laquo;</a>
+                    <a href="#" id="day-1">1</a>
+                    <a class="active" id="day-2">2</a>
+                    <a id="day-3">3</a>
+                    <a id="day-4">4</a>
+                    <a id="day-5">5</a>
+                    <a id="day-6">6</a>
+                    <a id="day-7">7</a>
+                    <a id="day-8">8</a>
+                    <a id="day-9">9</a>
+                    <a id="day-10">10</a>
+                    <a id="next">&raquo;</a>
+                  </div> -->
+            </div>
+            
+<script src="script.js"></script>
+</body>
+</html>
