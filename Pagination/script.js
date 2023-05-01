@@ -13,8 +13,7 @@ let end = 10;
 
 function getPhotos() {
   showLoader();
-  let apiUrl = "https://api.unsplash.com/photos?";
-  if (query) apiUrl = `https://api.unsplash.com/search/photos?query=${query}`;
+  let apiUrl=query ? `https://api.unsplash.com/search/photos?query=${query}`: "https://api.unsplash.com/photos?";
   apiUrl += `&page=${page}`;
   apiUrl += `&client_id=${accessId}`;
   apiUrl += `&per_page=${limit}`;
@@ -24,19 +23,8 @@ function getPhotos() {
     .then((response) => {
       const imagesFromApi = response.data.results ?? response.data;
 
-      // if page is 1, then we need a whole new array of images
-      /*  if (page === 1) {
-        // console.log(imagesFromApi);
-        images = imagesFromApi;
-        loadPhotos(imagesFromApi);
-        showPagination(start, end);
-        return;
-      } */
-      // if page > 1, then we are adding for our infinite scroll
-
       images = imagesFromApi;
       loadPhotos(images);
-      console.log(`page: ${page} start:${start} end:${end}`);
       showPagination(start, end);
       hideLoader();
     })
@@ -53,7 +41,6 @@ formEle.onsubmit = (e) => {
 };
 
 function loadPhotos(images) {
-  console.log(images);
   grid.querySelectorAll(".image").forEach((image) => image.remove());
   images.forEach((image) => {
     let img = document.createElement("a");
@@ -103,7 +90,6 @@ function showPagination(start, end) {
 function showActive() {
   const days = document.querySelectorAll(".pagination a");
   days.forEach((day) => {
-    // console.log("running");
     if (day.classList.contains("active")) {
       day.classList.remove("active");
     }
