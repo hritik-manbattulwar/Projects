@@ -2,9 +2,6 @@ const currentDate = $(".current-date");
 let daysTag = $(".days");
 let prevNextIcon = $(".icons i");
 
-// $(document).ready(function () {
-//   console.log("Hello");
-// });
 let date = new Date();
 let currMonth = date.getMonth();
 let currentYear = date.getFullYear();
@@ -83,16 +80,7 @@ let endDate;
 let li = $(".days li");
 li.each(function (day) {
   $(this).click(function () {
-    console.log($(this).text());
     updateDate($(this).text());
-    console.log(
-      "start: " +
-        startDate +
-        " end: " +
-        endDate +
-        " chosenType: " +
-        choosingType
-    );
     chosenDate(startDate, endDate, li);
   });
 });
@@ -117,7 +105,6 @@ function updateDate(chosenDay) {
 function chosenDate(startDate, endDate, li) {
   li.each(function (day) {
     $(this).removeClass(chosen_date);
-    // console.log($(this).text());
     if (
       ($(this).text() === startDate || $(this).text() === endDate) &&
       $(this).is("#day-" + $(this).text())
