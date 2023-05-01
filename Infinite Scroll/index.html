@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinite Gallery </title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+            <div class="app">
+                <h1 class="title">Infinite Image Gallery using Unsplash API</h1>
+                <form id="form">
+                    <input type="text" placeholder="Seach Unplash" name="search" id="search" class="search">
+                    <button type="submit">Search</button>
+                </form>
+                
+                <div class="image-grid" id="grid">
+                   <!-- The below html is comment for future reference -->
+                    <!-- <a
+                    href={image.links.html}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="image"
+                    key={index}>
+                    <img src={image.urls.regular} alt={image.alt_description} />
+                  </a> -->
+                  </div>
+                  <div class="spinner" >
+                    <img class="hide" src="loading-gif.gif" alt="" id="loader">
+                </div>
+            </div>
+            
+<script src="script.js"></script>
+</body>
+</html>
