@@ -13,7 +13,7 @@ let end = 10;
 
 function getPhotos() {
   showLoader();
-  let apiUrl=query ? `https://api.unsplash.com/search/photos?query=${query}`: "https://api.unsplash.com/photos?";
+  let apiUrl = query ? `https://api.unsplash.com/search/photos?query=${query}`: "https://api.unsplash.com/photos?";
   apiUrl += `&page=${page}`;
   apiUrl += `&client_id=${accessId}`;
   apiUrl += `&per_page=${limit}`;
@@ -22,7 +22,6 @@ function getPhotos() {
     .get(apiUrl)
     .then((response) => {
       const imagesFromApi = response.data.results ?? response.data;
-
       images = imagesFromApi;
       loadPhotos(images);
       showPagination(start, end);
