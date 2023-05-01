@@ -18,7 +18,6 @@ window.onload = (e) => {
   )
     .then((response) => response.json())
     .then((response) => {
-      console.log(response.items);
       items = response.items;
       const totalPages = Math.ceil(items.length / itemsPerPage); // Total number of pages
       renderItems(items);
@@ -66,7 +65,6 @@ formEle.onsubmit = (e) => {
     .then((response) => response.json())
     .then((response) => {
       items = response.items;
-      // console.log(items);
       const totalPages = Math.ceil(items.length / itemsPerPage); // Total number of pages
       renderItems(items);
       showActive(totalPages);
@@ -108,7 +106,6 @@ function showPagination(totalPages) {
 function showActive(totalPages) {
   const days = document.querySelectorAll(".pagination li");
   days.forEach((day) => {
-    // console.log("current Page: " + currentPage);
     if (day.classList.contains("bg-primary")) {
       day.classList.remove("bg-primary");
       day.classList.remove("text-white");
@@ -122,7 +119,6 @@ function showActive(totalPages) {
 }
 
 function change(totalPages) {
-  // console.log(totalPages);
   if (currentPage > 1) {
     document.getElementById("prev").style.display = "block";
   }
@@ -153,7 +149,7 @@ function reRender() {
 // Function to go to next page
 const goToNextPage = (items) => {
   const totalPages = Math.ceil(items.length / itemsPerPage); // Total number of pages
-  console.log("currentPage: " + currentPage + " totalPages: " + totalPages);
+  
   if (currentPage < totalPages) {
     currentPage++;
     renderItems(items);
