@@ -11,8 +11,9 @@ let query = "";
 
 function getPhotos() {
   showLoader();
-let apiUrl=query ?`https://api.unsplash.com/search/photos?query=${query}`: "https://api.unsplash.com/photos?";
-  /*Below Comments for the above ternary condtion using if statement
+let apiUrl = query ?`https://api.unsplash.com/search/photos?query=${query}`: "https://api.unsplash.com/photos?";
+  /*
+  Below Comments for the above ternary condition using if statement
   let apiUrl = "https://api.unsplash.com/photos?";
   if (query) apiUrl = `https://api.unsplash.com/search/photos?query=${query}`; 
   */
