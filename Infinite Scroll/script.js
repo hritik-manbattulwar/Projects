@@ -11,8 +11,11 @@ let query = "";
 
 function getPhotos() {
   showLoader();
+let apiUrl=query ?`https://api.unsplash.com/search/photos?query=${query}`: "https://api.unsplash.com/photos?";
+  /*Below Comments for the above ternary condtion using if statement
   let apiUrl = "https://api.unsplash.com/photos?";
-  if (query) apiUrl = `https://api.unsplash.com/search/photos?query=${query}`;
+  if (query) apiUrl = `https://api.unsplash.com/search/photos?query=${query}`; 
+  */
   apiUrl += `&page=${page}`;
   apiUrl += `&client_id=${accessId}`;
   apiUrl += `&per_page=${limit}`;
@@ -24,7 +27,6 @@ function getPhotos() {
 
       // if page is 1, then we need a whole new array of images
       if (page === 1) {
-        // console.log(imagesFromApi);
         images = imagesFromApi;
         loadPhotos(imagesFromApi);
         return;
@@ -40,7 +42,6 @@ function getPhotos() {
 }
 
 function loadPhotos(images) {
-  console.log(images);
   if (query && page == 1) {
     grid.querySelectorAll(".image").forEach((image) => image.remove());
   }

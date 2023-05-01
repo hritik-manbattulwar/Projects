@@ -17,24 +17,8 @@ body {
   padding: 100px 50px;
 }
 
-.error {
-  display: inline-block;
-  text-align: center;
-  margin: 30px;
-  background: rgb(221, 85, 70);
-  color: rgb(247, 232, 230);
-  padding: 20px 30px;
-  border-radius: 5px;
-  text-decoration: none;
-  transition: 0.3s ease all;
-}
 
-.error:hover {
-  background: rgb(235, 95, 79);
-  box-shadow: 3px 3px 0 rgb(141, 38, 26);
-}
-
-h1 {
+.title {
   margin-top: 0;
   margin-bottom: 20px;
   color: #bbb;
@@ -44,7 +28,7 @@ form {
   margin-bottom: 50px;
 }
 
-input[type="text"] {
+.search {
   min-width: 400px;
   border-radius: 50px;
   padding: 15px 20px;
@@ -55,8 +39,8 @@ input[type="text"] {
   transition: 0.3s ease border-color;
 }
 
-input[type="text"]:active,
-input[type="text"]:focus {
+.search:active,
+.search:focus {
   border-color: #999;
 }
 
@@ -111,7 +95,7 @@ button:hover {
   .image:nth-child(1n){
     grid-column-end: span 2;
   }
-  input[type="text"] {
+  .search {
     min-width: 200px;
     border-radius: 50px;
     padding: 15px 20px;
