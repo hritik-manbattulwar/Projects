@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-4" *ngFor="let post of posts">
+            <div class="card bg-dark">
+                <div class="card-header">
+                    <img [src]="post.image" alt="" class="img-thumbnail">
+                </div>
+                <div class="card-footer">
+                    <div class="d-flex flex-row justify-content-around">
+                        <div>
+                            <span><i class="fa  fa-heart mr-1"></i> </span>
+                            <span>{{post.likeCount}}</span>
+                        </div>
+                        <div>
+                            <span><i class="fa  fa-comment mr-1"></i> </span>
+                            <span>{{post.commentCount}}</span>
+                        </div>
+
+                        <div>
+                            <span><i class="fa  fa-share mr-1"></i> </span>
+                            <span>{{post.shareCount}}</span>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>

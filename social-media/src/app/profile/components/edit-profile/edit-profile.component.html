@@ -1,0 +1,192 @@
+<pre>Hello</pre>
+
+<div class="container py-5">
+
+    <div class="row">
+        <div class="col-md-12 col-md-offset-3">
+            <form [formGroup]="personalDetails" id="msform">
+
+                <ul id="progressbar">
+                    <li [ngClass]="step>=1 ? 'active ' : 'inactive'">Personal Details</li>
+                    <li [ngClass]="step>=2 ? 'active' : 'inactive'">Social Profiles</li>
+                    <li [ngClass]="step==3 ? 'active' : 'inactive'">Account Setup</li>
+                </ul>
+
+
+                <fieldset *ngIf="step == 1">
+                    <h2 class="fs-title">Personal Details</h2>
+                    <input type="text" formControlName="name"
+                        [ngClass]="{ 'is-invalid': personal_step && personal['name'].errors }"
+                        placeholder="Full Name" />
+                    <div *ngIf="personal_step && personalDetails.controls['name'].errors">
+                        <div *ngIf="personal['name'].errors?.['required']">Name is required</div>
+                    </div>
+                    <input type="text" formControlName="avatar"
+                        [ngClass]="{ 'is-invalid': personal_step && personal['avatar'].errors }"
+                        placeholder="Profile Photo Url" />
+                    <div *ngIf="personal_step && personalDetails.controls['avatar'].errors">
+                        <div *ngIf="personal['avatar'].errors?.['required']">Profile Photo is required</div>
+                    </div>
+                    <input type="text" formControlName="coverPhoto"
+                        [ngClass]="{ 'is-invalid': personal_step && personal['coverPhoto'].errors }"
+                        placeholder="Cover Photo Url" />
+                    <div *ngIf="personal_step && personalDetails.controls['coverPhoto'].errors">
+                        <div *ngIf="personal['coverPhoto'].errors?.['required']">Cover Photo Url is required</div>
+                    </div>
+                    <input type="text" formControlName="email" name="email" placeholder="Contact Email" />
+                    <div *ngIf="personal_step && personalDetails.controls['email'].errors">
+                        <div *ngIf="personal['email'].errors?.['required']">Contact Email is required</div>
+                    </div>
+                    <input type="text" formControlName="nickname" name="nickname" placeholder="Nickname" />
+                    <div *ngIf="personal_step && personalDetails.controls['nickname'].errors">
+                        <div *ngIf="personal['nickname'].errors?.['required']">Nickname is required</div>
+                    </div>
+                    <input type="text" formControlName="primaryPhone" name="primaryPhone"
+                        placeholder="Primary Phone No" />
+                    <div *ngIf="personal_step && personalDetails.controls['primaryPhone'].errors">
+                        <div *ngIf="personal['primaryPhone'].errors?.['required']">Primay Phone No is required</div>
+                    </div>
+                    <input type="text" formControlName="secondaryPhone" name="secondaryPhone"
+                        placeholder="Secondary Phone No" />
+                    <div *ngIf="personal_step && personalDetails.controls['secondaryPhone'].errors">
+                        <div *ngIf="personal['secondaryPhone'].errors?.['required']">Secondary Phone No is required
+                        </div>
+                    </div>
+                    <!-- Gender -->
+                    <div class="d-flex text-dark font-weight-bolder mb-2">
+
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" formControlName="gender" name="gender" value="Male"
+                                id="customRadioInline1" class="custom-control-input" checked>
+                            <label class="custom-control-label" for="customRadioInline1">Male</label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" formControlName="gender" name="gender" value="Female"
+                                id="customRadioInline2" class="custom-control-input">
+                            <label class="custom-control-label" for="customRadioInline2">Female</label>
+                        </div>
+                        <div class="text-danger" *ngIf="personal_step && personalDetails.controls['gender'].errors">
+                            <div *ngIf="personal['gender'].errors?.['required']">Gender is required</div>
+                        </div>
+                    </div>
+                    <!-- Dob -->
+                    <input type="date" formControlName="dob" name="dob" placeholder="Enter your DOB" />
+                    <div *ngIf="personal_step && personalDetails.controls['dob'].errors">
+                        <div *ngIf="personal['dob'].errors?.['required']">DOB is required</div>
+                    </div>
+                    <!-- Languages -->
+                    <div class="mb-2">
+
+                        <div class="row ">
+                            <div class="col-md-8 col-lg-5 d-flex justify-content-center align-items-center">
+                                <div class=" text-dark d-flex text-left align-items-center w-100">
+                                    <strong class=" sl">Select Languages:</strong>
+                                    <select formControlName="languages" name="languages" class="form-check"
+                                        id="multiple-checkboxes" multiple="multiple">
+                                        <option value="English">English</option>
+                                        <option value="Hindi">Hindi</option>
+                                        <option value="Marathi">Marathi</option>
+                                        <option value="Tamil">Tamil</option>
+                                        <option value="Telgu">Telgu</option>
+                                        <option value="Malyanam">Malyanam</option>
+                                    </select>
+                                </div>
+                                <div *ngIf="personal_step && personalDetails.controls['languages'].errors">
+                                    <div *ngIf="personal['languages'].errors?.['required']">Languages is required</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Social -->
+                    <input type="text" formControlName="instagram" name="instagram"
+                        placeholder="Enter your instagram" />
+                    <div *ngIf="personal_step && personalDetails.controls['instagram'].errors">
+                        <div *ngIf="personal['instagram'].errors?.['required']">Instagram is required</div>
+                    </div>
+                    <input type="text" formControlName="twitter" name="instagram" placeholder="Enter your twitter" />
+                    <div *ngIf="personal_step && personalDetails.controls['twitter'].errors">
+                        <div *ngIf="personal['twitter'].errors?.['required']">Twitter is required</div>
+                    </div>
+                    <input type="text" formControlName="website" name="website" placeholder="Enter your website" />
+                    <div *ngIf="personal_step && personalDetails.controls['website'].errors">
+                        <div *ngIf="personal['website'].errors?.['required']">Website is required</div>
+                    </div>
+
+                    <!-- About You -->
+                    <textarea rows="3" cols="3" formControlName="aboutYou" placeholder="About You"></textarea>
+                    <div *ngIf="personal_step && personalDetails.controls['aboutYou'].errors">
+                        <div *ngIf="personal['aboutYou'].errors?.['required']">About You is required</div>
+                    </div>
+                    <textarea rows="3" cols="3" formControlName="favouriteQuote"
+                        placeholder="Favourite Quote "></textarea>
+                    <div *ngIf="personal_step && personalDetails.controls['favouriteQuote'].errors">
+                        <div *ngIf="personal['favouriteQuote'].errors?.['required']">Favourite Quote is required</div>
+                    </div>
+                    <input (click)="next()" type="button" name="next" class="next action-button" value="Next" />
+                </fieldset>
+            </form>
+            <form [formGroup]="addressDetails" id="msform">
+                <fieldset *ngIf="step == 2">
+                    <h2 class="fs-title">Address Details</h2>
+                    <input type="text" formControlName="currentCity" placeholder="Current City" />
+                    <div *ngIf="address_step && addressDetails.controls['currentCity'].errors">
+                        <div *ngIf="address['currentCity'].errors?.['required']">Current City is required</div>
+                    </div>
+                    <input type="text" formControlName="currentState" placeholder="Current State" />
+                    <div *ngIf="address_step && addressDetails.controls['currentState'].errors">
+                        <div *ngIf="address['currentState'].errors?.['required']">Current State is required</div>
+                    </div>
+                    <input type="text" formControlName="homeCity" placeholder="Home City" />
+                    <div *ngIf="address_step && addressDetails.controls['homeCity'].errors">
+                        <div *ngIf="address['homeCity'].errors?.['required']">Home City is required</div>
+                    </div>
+                    <input type="text" formControlName="homeState" placeholder="Home State" />
+                    <div *ngIf="address_step && addressDetails.controls['homeState'].errors">
+                        <div *ngIf="address['homeState'].errors?.['required']">Home State is required</div>
+                    </div>
+                    <input rows="5" cols="5" formControlName="country" placeholder="country" />
+                    <div *ngIf="address_step && addressDetails.controls['country'].errors">
+                        <div *ngIf="address['country'].errors?.['required']">Country is required</div>
+                    </div>
+                    <input (click)="previous()" type="button" name="previous" class="previous action-button-previous"
+                        value="Previous" />
+                    <input (click)="next()" type="button" name="next" class="next action-button" value="Next" />
+                </fieldset>
+            </form>
+
+            <form [formGroup]="educationalDetails" id="msform">
+                <fieldset *ngIf="step == 3">
+                    <h2 class="fs-title">Educational and Work Details</h2>
+                    <input type="text" formControlName="designation" placeholder="Designation" />
+                    <div *ngIf="education_step && educationalDetails.controls['designation'].errors">
+                        <div *ngIf="education['designation'].errors?.['required']">Designation is
+                            required
+                        </div>
+                    </div>
+                    <input type="text" formControlName="organization" placeholder="Organization" />
+                    <div *ngIf="education_step && educationalDetails.controls['organization'].errors">
+                        <div *ngIf="education['organization'].errors?.['required']">Organization is required</div>
+                    </div>
+                    <input type="text" formControlName="college" placeholder="College" />
+                    <div *ngIf="education_step && educationalDetails.controls['college'].errors">
+                        <div *ngIf="education['college'].errors?.['required']">College is required</div>
+                    </div>
+                    <input type="text" formControlName="highSchool" placeholder="HighSchool" />
+                    <div *ngIf="education_step && educationalDetails.controls['highSchool'].errors">
+                        <div *ngIf="education['highSchool'].errors?.['required']">HighSchool is required</div>
+                    </div>
+                    <input type="text" formControlName="school" placeholder="School" />
+                    <div *ngIf="education_step && educationalDetails.controls['school'].errors">
+                        <div *ngIf="education['school'].errors?.['required']">School is required</div>
+                    </div>
+                    <input (click)="previous()" type="button" name="previous" class="previous action-button-previous"
+                        value="Previous" />
+                    <input (click)="submit()" type="submit" name="submit" class="submit action-button" value="Submit" />
+                </fieldset>
+            </form>
+
+        </div>
+
+
+    </div>
+</div>

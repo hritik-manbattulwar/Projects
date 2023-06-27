@@ -1,0 +1,42 @@
+<div>
+    <h5 class="font-weight-bold">Contact</h5>
+    <div class="d-flex flex-row align-items-center ">
+        <i class="fas fa-phone mr-2 mb-2"></i>
+        <h5>{{user.contact.primaryPhone}}</h5>
+    </div>
+    <div class="d-flex flex-row align-items-center">
+        <i class="fas fa-phone mr-2 mb-2"></i>
+        <h5>{{user.contact.secondaryPhone}}</h5>
+    </div>
+    <div class="d-flex flex-row align-items-center mb-3">
+        <i class="fas fa-envelope mr-2 mb-2"></i>
+        <h5>{{user.contact.email}}</h5>
+    </div>
+    <h5 class="font-weight-bold">Social Links</h5>
+    <div class="d-flex flex-row align-items-center">
+        <i class="fab fa-instagram mr-2 mb-2"></i>
+        <a class="h5 text-decoration-none" [href]="user.social.insta" target="_blank">{{user.social.insta}}</a>
+    </div>
+    <div class="d-flex flex-row align-items-center">
+        <i class="fab fa-twitter mr-2 mb-2"></i>
+        <a class="h5 text-decoration-none" [href]="user.social.insta" target="_blank">{{user.social.twitter}}</a>
+    </div>
+    <div class="d-flex flex-row align-items-center mb-3">
+        <i class="fas fa-globe mr-2 mb-2"></i>
+        <a class="h5 text-decoration-none" [href]="user.social.website" target="_blank">{{user.social.website}}</a>
+    </div>
+    <h5 class="font-weight-bold">Basic</h5>
+    <div class="d-flex flex-row align-items-center mb-3">
+        <i class="fas fa-male mr-2 mb-2" *ngIf="user.basic.gender==='Male'"></i>
+        <i class="fas fa-female mr-2 mb-2" *ngIf="user.basic.gender==='Female'"></i>
+        <h5>{{user.basic.gender}}</h5>
+    </div>
+    <div class="d-flex flex-row align-items-center mb-3">
+        <i class="fa fa-birthday-cake mr-2 mb-2"></i>
+        <h5>{{user.basic.dob | date}}</h5>
+    </div>
+    <div class="d-flex flex-row align-items-center mb-3">
+        <i class="fa fa-language mr-2 mb-2"></i>
+        <h5>Languages: {{user.basic.languages}}</h5>
+    </div>
+</div>

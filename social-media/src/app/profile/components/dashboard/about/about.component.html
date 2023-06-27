@@ -1,0 +1,23 @@
+<div class="card" style="background-color: #151728; border-radius: 4px;">
+    <div class="row">
+        <div class="col-md-3 border-right-side">
+            <div class="card-body">
+                <a [ngClass]="{'active' : currentRoute==='overview'}" routerLink="overview">Overview</a>
+                <a [ngClass]="{'active' : currentRoute==='work-education'}" routerLink="work-education">Work and
+                    Education</a>
+                <a [ngClass]="{'active' : currentRoute==='places-lived'}" routerLink="places-lived">Placed Lived</a>
+                <a [ngClass]="{'active' : currentRoute==='contact'}" routerLink="contact">Contact and Basic Info</a>
+                <a [ngClass]="{'active' : currentRoute==='details'}" routerLink="details">Details About You</a>
+            </div>
+        </div>
+
+        <div class="col-md-9">
+            <div class="card-body">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>

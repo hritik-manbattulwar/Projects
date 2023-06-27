@@ -1,0 +1,16 @@
+<div class="card" style="background-color: #151728; border-radius: 4px;">
+    <div class="row">
+        <div class="card-body">
+            <a routerLink="profile" class="profile-menu-link"
+                [ngClass]="{'active' : currentRoute==='profile'}">Profile</a>
+            <a routerLink="cover" class="profile-menu-link" [ngClass]="{'active' : currentRoute==='cover'}">Cover
+                Photos</a>
+            <a routerLink="others" class="profile-menu-link" [ngClass]="{'active' : currentRoute==='others'}">Others</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="card-body">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

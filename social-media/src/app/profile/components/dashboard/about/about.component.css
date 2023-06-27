@@ -1,0 +1,33 @@
+.card-body>a {
+    color: rgb(235, 232, 232);
+    display: block;
+    min-width: 0;
+    max-width: 100%;
+    font-size: 1.1rem;
+    word-wrap: break-word;
+    line-height: 1.3333;
+    font-weight: 600;
+    cursor: pointer;
+    list-style: none;
+    margin-top: 0;
+    margin-bottom: 8px;
+
+    padding: 8px 20px 8px 10px;
+    background-color: transparent;
+
+    border-radius: 6px;
+}
+
+.card-body>a:hover {
+    background-color: grey;
+}
+
+.card-body>a.active {
+    background-color: rgba(45, 136, 255, 0.2);
+}
+
+/*   */
+
+.border-right-side {
+    border-right: 1px solid rgb(63, 63, 63);
+}

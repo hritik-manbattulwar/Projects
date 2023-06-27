@@ -1,0 +1,62 @@
+<!-- <div class="container">
+    <div class="row">
+        
+        <div class="col-xl-3 col-sm-6 mb-5" *ngFor="let follower of followers">
+            <div class="bg-white rounded shadow-sm py-5 px-4  h-100"><img [src]="follower.avatar" alt="" width="100"
+                    class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                <h5 class="mb-0">{{follower.name}} </h5><span class="small text-uppercase text-muted">{{follower.role}}
+                    -
+                    {{follower.organization}} </span>
+                <ul class="social mb-0 list-inline mt-3">
+                    <li class="list-inline-item">
+                        <a href="#" class="social-link">
+                            <i class="fa fa-facebook-f"></i></a>
+                    </li>
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a>
+                    </li>
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div> -->
+
+<div class="container-fluid">
+
+    <div class="row ">
+        <div class="col-md-4 h-100" *ngFor="let follower of followings">
+            <img [src]="follower.avatar" class=" follow-card-img img-fluid img-thumbnail rounded-circle w-25" alt="">
+            <div class="card  bg-dark">
+                <div class="card-header">
+                    <img [src]="follower.cover_photo" alt="" class="card-img-top ">
+                </div>
+
+                <div class="card-body text-center">
+                    <p class="lead mt-4">{{follower.name}}</p>
+                    <p>{{follower.work.role}} - {{follower.work.organization}}</p>
+                    <div class="d-flex flex-row justify-content-between">
+
+                        <div class="d-flex flex-column ">
+                            <span>Followers</span>
+                            <span>{{follower.followers | length}}</span>
+                        </div>
+                        <div class="d-flex flex-column">
+                            <span>Following</span>
+                            <span>{{follower.following | length}}</span>
+                        </div>
+                        <div class="d-flex flex-column">
+                            <span>Posts</span>
+                            <span>{{follower.posts | length}}</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary mt-3 ml-2">Following</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+</div>
